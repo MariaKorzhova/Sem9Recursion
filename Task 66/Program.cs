@@ -42,7 +42,10 @@ void Number(int n,int m)
     }
     else
     {
-        sum += n;
+        if (n >= 0)
+        {
+            sum += n;
+        }
     }
 Number(n-1,m);
 }
