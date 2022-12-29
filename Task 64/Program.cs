@@ -6,34 +6,46 @@
 Console.Clear();
 int N = InputNumber("Введите число N: ");
 int b = 1;
-Number(N,b);
+Number(N, b);
 System.Console.WriteLine();
 
 
 void Number(int n, int b)
 {
-if (b > n)
-{
-return;
-}
-Number(n,b+1);
-System.Console.Write($" {b} ");
+    if (n > 0)
+    {
+        if (b > n)
+        {
+            return;
+        }
+        Number(n, b + 1);
+        System.Console.Write($" {b} ");
+    }
+    if (n <= 0)
+    {
+        if (b < n)
+        {
+            return;
+        }
+        Number(n, b - 1);
+        System.Console.Write($" {b} ");
+    }
 }
 
 int InputNumber(string str)
 {
-int number;
-string text;
-while (true)
-{
-System.Console.Write(str);
-text = Console.ReadLine();
-if (int.TryParse(text, out number))
-{
-break;
-}
-System.Console.WriteLine("Не удалось распознать число, попробуйте еще раз.");
-}
-return number;
+    int number;
+    string text;
+    while (true)
+    {
+        System.Console.Write(str);
+        text = Console.ReadLine();
+        if (int.TryParse(text, out number))
+        {
+            break;
+        }
+        System.Console.WriteLine("Не удалось распознать число, попробуйте еще раз.");
+    }
+    return number;
 }
 
